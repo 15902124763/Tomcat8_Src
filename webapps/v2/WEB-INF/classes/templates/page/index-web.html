@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html style="height: 100%;">
+<head>
+    <meta charset="utf-8">
+    <title>讨论区</title>
+	<script src="../../js/jquery/2.1.1/jquery.min.js"></script>
+	<script src="../../js/bootstrap/3.3.7/bootstrap.min.js"></script>
+	<script src="../../js/common/default.js"></script>
+	<script src="../../js/page/index.js"></script>
+	<link rel="stylesheet" href="../../css/bootstrap/3.3.7/bootstrap.min.css">
+	<link href="../../css/page/index.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+</script>
+</head>
+<body>
+<header>
+<div class="AppHeader-inner">
+<ul class="tablist">
+	<li class="Tabs-item">
+	<a class="Tabs-link is-active" href="javascript:void(0);" onclick="homePage()">首页</a>
+	</li>
+	<li class="Tabs-item">
+	<a class="Tabs-link" href="javascript:void(0);">推荐</a>
+	</li>
+	<li class="Tabs-item">
+	<a class="Tabs-link" href="javascript:void(0);">热帖</a>
+	</li>
+	<li class="Tabs-item">
+	<a class="Tabs-link" href="javascript:void(0);">我的</a>
+	</li>
+</ul>
+<ul class="Ul-search">
+	<li class="Ul-search-item">
+		<div>
+			<input class="blog-search-input" id="searchId">
+			<button onclick="search()" class="btn">
+				搜索
+			</button>
+		</div>
+	</li>
+</ul>
+<ul class="Ul-write">
+    <li class="Ul-write-item">
+    	<button onclick="writeBlog()" class="btn">
+    	发帖
+    	</button>
+    </li>
+</ul>
+</div>
+</header>
+<div id="main">
+    <div class="content" id="contentId">
+
+    </div>
+</div>
+
+<!-- 弹框 -->
+<div class="modal fade" id="writeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title">
+					发帖
+				</h4>
+			</div>
+			<div class="modal-body">
+				<div >
+				 <input id="blogTiletId" class="blog-title" type="text" placeholder="请输入标题（最多 20 个字）">
+			    </div>
+				<div><font id="blogTiletAlertId" style="display:none;" color="red"></font></div>
+			    <div>
+			     <textarea id="blogContentId" class="blog-content" placeholder="请输入正文（最多 100 个字）"></textarea>
+			    </div>
+				<div><font id="blogContentAlertId" style="display:none;" color="red"></font></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn" onclick="submitBlog()">
+					发布
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- data-backdrop="false"去除遮罩层  -->
+<div class="modal fade bd-example-modal-sm"  id="agreeResultModelId" role="dialog" data-backdrop="false"  aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<p class="text-center mb-0">
+				<i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+				感谢亲<img src="../../img/qin.jpg"style="width: 100%;height: 100%">
+			</p>
+		</div>
+	</div>
+</div>
+
+<!-- 发帖成功  -->
+<div class="modal fade bd-example-modal-sm"  id="writeBlogSuccessId" role="dialog" data-backdrop="false"  aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<p class="text-center mb-0">
+				<i class="fa fa-check-circle text-success mr-1" aria-hidden="true"></i>
+				成功发帖
+			</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
